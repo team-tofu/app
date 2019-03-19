@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
+import PollForm from '../components/pollform/PollForm';
 
-export default function Home() {
-  return (
-    <h1>Home</h1>
-  );
+export default class Home extends PureComponent {
+  handleSubmit = () => {
+    console.log('submitted');
+  };
+
+  render() {
+    return (
+      <>
+        <h1>Home</h1>
+        <PollForm handleSubmit={this.handleSubmit}/>
+      </>
+    );
+  }
+  
 }
