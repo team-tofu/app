@@ -15,8 +15,19 @@ export default class PollForm extends PureComponent {
         <main>
           <form onSubmit={handleSubmit}>
             <label>Poll Question: 
-              <input type='text' name='text'></input>
+              <textarea type='text' name='text'></textarea>
             </label>
+            <fieldset>
+              <label>Answer One:
+                <textarea name='one'></textarea>
+              </label>
+              <label>Answer Two:
+                <textarea type='text' name='two'></textarea>
+              </label>
+              <label>Answer Three:
+                <textarea type='text' name='three'></textarea>
+              </label>
+            </fieldset>
             <button type='submit'>Submit</button>
           </form>
         </main>
