@@ -5,6 +5,7 @@ export default class Home extends PureComponent {
   handleSubmit = event => {
     event.preventDefault();
     console.log('submitted', event.target.text.value);
+    event.target.text.value = null;
   };
 
   render() {
