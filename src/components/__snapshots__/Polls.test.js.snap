@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Polls Test Renders list of polls 1`] = `
+<ul>
+  <li>
+    some question
+  </li>
+  <li>
+    some question
+  </li>
+  <li>
+    some question
+  </li>
+  <li>
+    some question
+  </li>
+</ul>
+`;
