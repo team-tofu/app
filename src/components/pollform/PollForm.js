@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function PollForm({ topic, optionChange, topicChange, onSubmit, onAdd }) {
+export default function PollForm({ question, option, optionChange, topicChange, onSubmit, onAdd }) {
   return (
       <>
         <header>
@@ -9,22 +9,18 @@ export default function PollForm({ topic, optionChange, topicChange, onSubmit, o
         </header>
         <main>
           <form onSubmit={onSubmit}>
-            <label>Poll Question: 
-              <textarea type='text' name='topic' value={topic} onChange={topicChange}></textarea>
-            </label>
+            <label>Poll Question: </label>
+            <input type='text' name='topic' value={question} onChange={topicChange}></input>
             <fieldset>
-              <label>Choice 1:
-                <textarea name='one' onChange={optionChange}></textarea>
-                <button onAdd={onAdd}></button>
-              </label>
-              <label>Choice 2:
-                <textarea type='text' name='two' onChange={optionChange}></textarea>
-                <button onAdd={onAdd}></button>
-              </label>
-              <label> Choice 3:
-                <textarea type='text' name='three' onChange={optionChange}></textarea>
-                <button onAdd={onAdd}></button>
-              </label>
+              <label>Choice 1: </label>
+              <input type='text' name='one' value={option} onChange={optionChange}></input>
+              <button onAdd={onAdd}>ADD</button>
+              <label>Choice 2:</label>
+              <input type='text' name='two' value={option} onChange={optionChange}></input>
+              <button onAdd={onAdd}>ADD</button>
+              <label> Choice 3: </label>
+              <input type='text' name='three' value={option} onChange={optionChange}></input>
+              <button onAdd={onAdd}>ADD</button>
             </fieldset>
             <button type='submit'>Submit</button>
           </form>
@@ -39,5 +35,6 @@ PollForm.propTypes =  {
   topicChange: PropTypes.func.isRequired,
   optionChange: PropTypes.func.isRequired,
   onAdd: PropTypes.func.isRequired,
-  topic: PropTypes.string.isRequired
+  question: PropTypes.string.isRequired,
+  option: PropTypes.string.isRequired
 };
