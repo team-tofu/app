@@ -1,38 +1,43 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-export default class PollForm extends PureComponent {
-  static propTypes = {
-    handleSubmit: PropTypes.func.isRequired
-  }
-  render() {
-    const { handleSubmit } = this.props;
-    return (
+export default function PollForm({ topic, optionChange, topicChange, onSubmit, onAdd }) {
+  return (
       <>
         <header>
           <h2>PollForm</h2>
         </header>
         <main>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={onSubmit}>
             <label>Poll Question: 
-              <textarea type='text' name='text'></textarea>
+              <textarea type='text' name='topic' value={topic} onChange={topicChange}></textarea>
             </label>
             <fieldset>
-              <label>Answer One:
-                <textarea name='one'></textarea>
+              <label>Choice 1:
+                <textarea name='one' onChange={optionChange}></textarea>
+                <button onAdd={onAdd}></button>
               </label>
-              <label>Answer Two:
-                <textarea type='text' name='two'></textarea>
+              <label>Choice 2:
+                <textarea type='text' name='two' onChange={optionChange}></textarea>
+                <button onAdd={onAdd}></button>
               </label>
-              <label>Answer Three:
-                <textarea type='text' name='three'></textarea>
+              <label> Choice 3:
+                <textarea type='text' name='three' onChange={optionChange}></textarea>
+                <button onAdd={onAdd}></button>
               </label>
             </fieldset>
             <button type='submit'>Submit</button>
           </form>
         </main>
       </>
-    );
-  }
+  );
 }
 
+
+PollForm.propTypes =  {
+  onSubmit: PropTypes.func.isRequired,
+  topicChange: PropTypes.func.isRequired,
+  optionChange: PropTypes.func.isRequired,
+  onAdd: PropTypes.func.isRequired,
+  topic: PropTypes.string.isRequired
+};
