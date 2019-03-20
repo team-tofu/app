@@ -1,26 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function PollForm({ optionChange, questionChange, handleSubmit, onAdd }) {
+export default function PollForm({ option, question, optionChange, questionChange, handleSubmit, onAdd }) {
   return (
       <>
         <header>
           <h2>PollForm</h2>
-        </header>
+        </header> 
         <main>
           <form onSubmit={handleSubmit}>
             <label>Poll Question: </label>
-            <input type='text' name='topic' onChange={questionChange}></input>
+            <input type='text' name='topic' value={question} onChange={questionChange}></input>
             <fieldset>
-              <label>Choice 1: </label>
-              <input type='text' name='option1' onChange={optionChange}></input>
-              <button onAdd={onAdd}>ADD</button>
-              <label>Choice 2:</label>
-              <input type='text' name='option2' onChange={optionChange}></input>
-              <button   onAdd={onAdd}>ADD</button>
-              <label> Choice 3: </label>
-              <input type='text' name='option3' onChange={optionChange}></input>
-              <button onAdd={onAdd}>ADD</button>
+              <label>Add an Option: </label>
+              <input type='text' name='option' value={option} onChange={optionChange}></input>
+              <button type='button' onClick={onAdd}>ADD</button>
             </fieldset>
             <button type='submit'>Submit</button>
           </form>

@@ -2,7 +2,7 @@
 import PollForm from '../components/polls/PollForm';
 import { connect } from 'react-redux';
 import { getQuestion, getOption, getOptions, isPollFormLoading } from '../components/selectors/pollForm';
-import { createPoll } from '../components/actions/pollForm';
+import { createPoll, updateQuestion, updateOption, addOption } from '../components/actions/pollForm';
 
 const mapStateToProps = state => ({
   question: getQuestion(state),
@@ -11,7 +11,7 @@ const mapStateToProps = state => ({
   loading: isPollFormLoading(state)
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = dispatch => ({        
   handleSubmit(event) {
     console.log('submit');
     event.preventDefault();
@@ -19,15 +19,16 @@ const mapDispatchToProps = dispatch => ({
   },
 
   questionChange({ target }) {
-    dispatch((target.value));
+    dispatch(updateQuestion(target.value));
   },
 
   optionChange({ target }) {
-    dispatch((target.value));
+    dispatch(updateOption(target.value));
   },
-  onAdd(event) {
+  onAdd(options, event) {
     console.log('adding');
     event.preventDefault();
+    dispatch(addOption({ options }));
   }
 });
 

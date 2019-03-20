@@ -1,5 +1,5 @@
 export const postPoll = poll => {
-  return fetch(`${process.env.API_URL}/polls`, {
+  return fetch(`${process.env.API_URL}`, {
     method: 'POST',
     body: JSON.stringify(poll)
   })
