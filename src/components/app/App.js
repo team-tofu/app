@@ -1,10 +1,11 @@
 import React from 'react';
-import Poll from '../Poll';
+import Home from '../../containers/Home';
 
 export default function App() {
   return (
     <>
-    <Poll question={'how are we doing this'} options={['idk', 'because were Tofu']}/>
+      <h1>This is app</h1>
+      <Home/>
     </>
   );
 }
