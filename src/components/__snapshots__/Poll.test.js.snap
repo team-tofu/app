@@ -1,10 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Polls Test Renders list of polls 1`] = `
-Array [
+<section
+  className="poll"
+>
   <h2>
     some Question
-  </h2>,
+  </h2>
   <ul>
     <li>
       option1
@@ -12,6 +14,6 @@ Array [
     <li>
       option2
     </li>
-  </ul>,
-]
+  </ul>
+</section>
 `;
