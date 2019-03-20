@@ -1,3 +1,9 @@
+import {
+  CREATE_POLL,
+  CREATE_POLL_PENDING, 
+  CREATE_POLL_ERROR
+} from '../actions/pollForm';
+
 const initialState = {
   loading: false,
   error: null,
@@ -7,6 +13,23 @@ const initialState = {
 };
 
 export default function reducer(state = initialState, action) {
-  return state;
+  switch(action.type) {
+    case CREATE_POLL:
+      return {
+        ...initialState
+      };
+    case CREATE_POLL_PENDING:
+      return {
+        ...state, loading: true
+      };
+    case CREATE_POLL_ERROR:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload
+      };
+    default:
+      return state;
+  }
 }
 

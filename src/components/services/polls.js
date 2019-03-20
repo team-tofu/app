@@ -1,4 +1,4 @@
-export default postPoll = poll => {
+export const postPoll = poll => {
   return fetch(`${process.env.API_URL}/polls`, {
     method: 'POST',
     body: JSON.stringify(poll)
