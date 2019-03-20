@@ -1,10 +1,10 @@
 import reducer from './pollForm';
 import {
-  CREATE_NOTE,
-  CREATE_NOTE_PENDING,
-  CREATE_NOTE_ERROR
+  CREATE_POLL,
+  CREATE_POLL_PENDING,
+  CREATE_POLL_ERROR
 } from '../actions/pollForm';
-import { exportAllDeclaration } from '@babel/types';
+import { exportDefaultDeclaration } from '@babel/types';
 
 jest.mock('../services/polls.js');
 
@@ -22,14 +22,23 @@ describe('pollForm reducer', () => {
   });
   it('handles the CREATE_NOTE action', () => {
     const updatedState = reducer(state, {
-      type: CREATE_NOTE,
+      type: CREATE_POLL,
     });
     expect(updatedState).toEqual({
       loading: false, 
       error: null,
-      question: 'What is your favorite animal?',
-      option: 'Dog',
-      options: ['Dog', 'Cat', 'Snake'],
+      question: '',
+      option: '',
+      options: [],
+    });
+  });
+  it('handles the CREATE_NOTE_PENDING action', () => {
+    const updatedState = reducer(state, {
+      type: CREATE_POLL_PENDING
+    });
+    expect(updatedState).toEqual({
+      ...state,
+      loading: true
     });
   });
 });
