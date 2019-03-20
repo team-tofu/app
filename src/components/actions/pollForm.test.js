@@ -12,10 +12,10 @@ jest.mock('../services/polls.js', () => ({
 
 describe('pollForm actions', () => {
   it('creates a CREATE_POLL action', () => {
-    const action = createPoll({ 
-      question: 'what is your favorite animal', 
-      option: 'Dog', 
-      options: []
+    const action = createPoll({
+      question: 'test',
+      option: 'test', 
+      options: ['test']
     });
     expect(action).toEqual({
       type: CREATE_POLL,

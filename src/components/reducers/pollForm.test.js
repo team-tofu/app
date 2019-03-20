@@ -23,13 +23,14 @@ describe('pollForm reducer', () => {
   it('handles the CREATE_POLL action', () => {
     const updatedState = reducer(state, {
       type: CREATE_POLL,
+      payload: { question: '' }
     });
     expect(updatedState).toEqual({
       loading: false, 
       error: null,
       question: '',
-      option: '',
-      options: [],
+      option: 'Dog',
+      options:['Dog', 'Cat', 'Snake']
     });
   });
   it('handles the CREATE_POLL_PENDING action', () => {
