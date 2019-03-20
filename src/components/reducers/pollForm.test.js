@@ -4,7 +4,7 @@ import {
   CREATE_POLL_PENDING,
   CREATE_POLL_ERROR
 } from '../actions/pollForm';
-import { exportDefaultDeclaration } from '@babel/types';
+
 
 jest.mock('../services/polls.js');
 
