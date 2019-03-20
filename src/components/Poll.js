@@ -1,5 +1,7 @@
 import React from 'react';
 import propTypes from 'prop-types';
+import styles from './Poll.css';
+
 
 export default function Poll({ question, options }) {
   const optionsList = options.map((option, i) => {
@@ -7,8 +9,10 @@ export default function Poll({ question, options }) {
   });
   return (
     <>
-    <h2>{question}</h2>
-    <ul>{optionsList}</ul>
+    <section className={styles.poll}>
+      <h2>{question}</h2>
+      <ul>{optionsList}</ul>
+    </section>
     </>
   );
 
@@ -16,5 +20,5 @@ export default function Poll({ question, options }) {
 
 Poll.propTypes = {
   question: propTypes.string.isRequired,
-  options: propTypes.array
+  options: propTypes.array.isRequired
 };

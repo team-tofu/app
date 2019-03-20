@@ -1,10 +1,10 @@
 import React from 'react';
-import Polls from '../Polls';
+import Poll from '../Poll';
 
 export default function App() {
   return (
     <>
-    <Polls />
+    <Poll question={'how are we doing this'} options={['idk', 'because were Tofu']}/>
     </>
   );
 }
