@@ -20,7 +20,7 @@ describe('pollForm reducer', () => {
       options: ['Dog', 'Cat', 'Snake']
     };
   });
-  it('handles the CREATE_NOTE action', () => {
+  it('handles the CREATE_POLL action', () => {
     const updatedState = reducer(state, {
       type: CREATE_POLL,
     });
@@ -32,13 +32,24 @@ describe('pollForm reducer', () => {
       options: [],
     });
   });
-  it('handles the CREATE_NOTE_PENDING action', () => {
+  it('handles the CREATE_POLL_PENDING action', () => {
     const updatedState = reducer(state, {
       type: CREATE_POLL_PENDING
     });
     expect(updatedState).toEqual({
       ...state,
       loading: true
+    });
+  });
+  it('handles the CREATE_POLL_ERROR', () => {
+    const updatedState = reducer(state, {
+      type: CREATE_POLL_ERROR,
+      payload: 'error'
+    });
+
+    expect(updatedState).toEqual({
+      ...state,
+      error: 'error'
     });
   });
 });
