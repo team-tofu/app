@@ -1,5 +1,5 @@
 import React from 'react';
-import CreatePollContainer from '../../containers/CreatePollContainer';
+import CreatePollContainer from '../../containers/polls/CreatePollContainer';
 
 export default function App() {
   return (

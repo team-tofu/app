@@ -1,7 +1,7 @@
-import PollForm from '../components/polls/PollForm';
+import PollForm from '../../components/polls/PollForm';
 import { connect } from 'react-redux';
-import { getQuestion, getOption, getOptions, isPollFormLoading } from '../components/selectors/pollForm';
-import { createPoll, updateQuestion, updateOption, addOption } from '../components/actions/pollForm';
+import { getQuestion, getOption, getOptions, isPollFormLoading } from '../../components/selectors/pollForm';
+import { createPoll, updateQuestion, updateOption, addOption } from '../../components/actions/pollForm';
 
 const mapStateToProps = state => ({
   question: getQuestion(state),

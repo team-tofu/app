@@ -26,9 +26,6 @@ export const updateOption = option => ({
 });
 
 export const ADD_OPTION = 'ADD_OPTION';
-export const addOption = option => ({
-  type: ADD_OPTION,
-  payload: {
-    option
-  }
+export const addOption = () => ({
+  type: ADD_OPTION
 });
