@@ -1,4 +1,3 @@
-
 import PollForm from '../components/polls/PollForm';
 import { connect } from 'react-redux';
 import { getQuestion, getOption, getOptions, isPollFormLoading } from '../components/selectors/pollForm';
@@ -13,7 +12,6 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({        
   handleSubmit(event) {
-    console.log('submit');
     event.preventDefault();
     dispatch(createPoll());
   },
@@ -25,10 +23,9 @@ const mapDispatchToProps = dispatch => ({
   optionChange({ target }) {
     dispatch(updateOption(target.value));
   },
-  onAdd(options, event) {
-    console.log('adding');
-    event.preventDefault();
-    dispatch(addOption({ options }));
+  onAdd() {
+    console.log('hello');
+    dispatch(addOption());
   }
 });
 

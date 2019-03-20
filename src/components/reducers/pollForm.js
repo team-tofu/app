@@ -7,7 +7,8 @@ import {
   UPDATE_QUESTION_ERROR,
   UPDATE_OPTION,
   UPDATE_OPTION_ERROR,
-  UPDATE_OPTION_PENDING
+  UPDATE_OPTION_PENDING,
+  ADD_OPTION
 } from '../actions/pollForm';
 
 const initialState = {
@@ -22,12 +23,14 @@ export default function reducer(state = initialState, action) {
   switch(action.type) {
     case CREATE_POLL:
     case UPDATE_QUESTION:
+      return {
+        ...state,
+        question: action.payload.question,
+      };
     case UPDATE_OPTION:
       return {
-        ...initialState,
-        question: action.payload.question,
+        ...state, 
         option: action.payload.option,
-        options: [...state.options, action.payload.option]
       };
     case CREATE_POLL_PENDING:
     case UPDATE_QUESTION_PENDING:
@@ -42,6 +45,11 @@ export default function reducer(state = initialState, action) {
         ...state,
         loading: false,
         error: action.payload
+      };
+    case ADD_OPTION: 
+      return {
+        ...state,
+        options: [...state.options, state.option]
       };
     default:
       return state;

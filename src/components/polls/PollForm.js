@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function PollForm({ option, question, optionChange, questionChange, handleSubmit, onAdd }) {
+export default function PollForm({ option, question, optionChange, questionChange, onAdd }) {
   return (
       <>
         <header>
           <h2>PollForm</h2>
         </header> 
         <main>
-          <form onSubmit={handleSubmit}>
+          <form>
             <label>Poll Question: </label>
             <input type='text' name='topic' value={question} onChange={questionChange}></input>
             <fieldset>
@@ -31,4 +31,5 @@ PollForm.propTypes =  {
   question: PropTypes.string,
   onAdd: PropTypes.func,
   option: PropTypes.string,
+  options: PropTypes.array,
 };
