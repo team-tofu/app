@@ -5,8 +5,6 @@ import {
   CREATE_POLL_ERROR,
   CREATE_POLL_FULFILLED
 } from './pollForm';
-import { JestEnvironment } from '@jest/environment';
-import { exportAllDeclaration } from '@babel/types';
 
 jest.mock('../services/polls.js', () => ({
   postPoll: () => Promise.resolve()

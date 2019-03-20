@@ -1,11 +1,11 @@
 import React from 'react';
-import PollFormContainer from '../../containers/PollFormContainer';
+import CreatePollContainer from '../../containers/CreatePollContainer';
 
 export default function App() {
   return (
     <>
       <h1>HayPoll</h1>
-      <PollFormContainer/>
+      <CreatePollContainer/>
     </>
   );
 }
