@@ -1,11 +1,11 @@
 import React from 'react';
-import Home from '../../containers/Home';
+import CreatePollContainer from '../../containers/polls/CreatePollContainer';
 
 export default function App() {
   return (
     <>
-      <h1>This is app</h1>
-      <Home/>
+      <h1>HayPoll</h1>
+      <CreatePollContainer/>
     </>
   );
 }
